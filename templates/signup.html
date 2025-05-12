@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="static/assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="static/styles.css">
+    <title>Sign Up</title>
+</head>
+<body class="body">
+    <div class="navbar">
+        <a href="/">Home</a>
+
+        <div class="dropdown">
+          <button class="dropbtn">Menu &#9660;</button>
+          <div class="dropdown-content">
+            <a href="/signup">Sign up</a>
+            <a href="/login">Login</a>
+            <a href="/feed">Feed</a>
+          </div>
+        </div>
+        <div class="logo">SuperBlog</div>
+    </div>
+
+    <div class="login">
+        Create an Account:<br>
+        Username:<br>
+        <input type="text" id="txtUsername"><br>
+        Email:<br>
+        <input type="text" id="txtEmail"><br>
+        Password:<br>
+        <input type="password" id="txtPassword"><br><br>
+        <button class="button" onclick="create_profile()">Sign Up</button><br><br>
+        <a href="/login">Already Have an Account?</a>
+    </div>
+
+    <script src="static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="static/assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="static/styles.css">
+    <title>Login</title>
+</head>
+<body class="body">
+    <div class="navbar">
+        <a href="/">Home</a>
+
+        <div class="dropdown">
+          <button class="dropbtn">Menu &#9660;</button>
+          <div class="dropdown-content">
+            <a href="/signup">Sign up</a>
+            <a href="/login">Login</a>
+            <a href="/feed">Feed</a>
+          </div>
+        </div>
+        <div class="logo">SuperBlog</div>
+    </div>
+
+    <div class="login">
+        Email:<br>
+        <input type="text" id="txtEmail"><br>
+        Password:<br>
+        <input type="password" id="txtPassword"><br>
+        Remember Me: <input type="checkbox" id="chkRemember"><br>
+        <button class="button" onclick="login()">Login</button><br>
+        <a href="/signup">Create an Account</a>
+    </div>
+    <button id="logout" onclick="logout()">Logout</button>
+    
+    <script src="static/script.js"></script>
+</body>
+</html>

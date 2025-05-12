@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Post View</title>
+</head>
+<body class="body">
+    <div class="navbar">
+        <a href="/">Home</a>
+
+        <div class="dropdown">
+          <button class="dropbtn">Menu &#9660;</button>
+          <div class="dropdown-content">
+            <a href="/signup">Sign up</a>
+            <a href="/login">Login</a>
+            <a href="/feed">Feed</a>
+            <a href="#" onclick="logout(); return false;">Logout</a>
+          </div>
+        </div>
+        <div class="logo">SuperBlog</div>
+    </div>
+
+    <div class="post_container">
+        {{ username }} <br>
+        {{ date }} <br>
+        {{ text }} <br>
+    </div>
+
+    <hr>
+    <h2>Replies:</h2>
+    <div id="divResults"></div>
+
+    <input type="hidden" id="parent_pid" value="{{ pid }}">
+
+    <hr>
+    <div class="poster">
+        Reply: <br> 
+        <input type="text" id="text"><br><br>
+        <button class="button" onclick="post_reply()">Reply</button><br>
+    </div>
+
+    <script src="/static/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof list_replies === 'function') {
+                list_replies('{{ pid }}');
+            } else {
+                console.error('Script did not load, fix this first');
+            }
+        });
+    </script>
+</body>
+</html>

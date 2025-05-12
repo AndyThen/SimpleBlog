@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="static/assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>{{ username }}'s Profile</title>
+</head>
+<body class="body">
+    <div class="navbar">
+        <a href="/">Home</a>
+
+        <div class="dropdown">
+          <button class="dropbtn">Menu &#9660;</button>
+          <div class="dropdown-content">
+            <a href="/signup">Sign up</a>
+            <a href="/login">Login</a>
+            <a href="/feed">Feed</a>
+            <a href="#" onclick="logout(); return false;">Logout</a>
+          </div>
+        </div>
+        <div class="logo">SuperBlog</div>
+    </div>
+
+    <h1>{{ username }}'s Page</h1>
+    <img src="{{ photo }}" alt="Profile Picture">
+
+    <input type="hidden" id="uid" value="{{ uid }}">
+
+    <div id="divResults"></div>
+
+    {% if username == session.get('username') %}
+    <div class="profile-controls">
+        <label>Profile Picture</label><br>
+        <input type="file" id="file">
+        <button onclick="upload_file();">Upload</button>
+        <br><br>
+        <a href="/logout">Logout</a>
+    </div>
+    {% endif %}
+
+    <script src="/static/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof list_users_posts === 'function') {
+                list_users_posts('{{ uid }}');
+                var loggedIn = "{{ username }}";
+            } else {
+                console.error('Script did not load, fix this first');
+            }
+        });
+    </script>
+</body>
+</html>

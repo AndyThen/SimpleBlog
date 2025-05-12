@@ -1,0 +1,4 @@
+# flask requirements
+flask
+flask_session
+boto3
